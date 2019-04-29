@@ -1,27 +1,28 @@
 package restfulwebservice
 
-import grails.databinding.BindingFormat
-import grails.rest.Resource
+import org.joda.time.LocalDate
 
-@Resource
 class Workbook {
+    Integer id
     String firstName
     String lastName
-    @BindingFormat('yyyy-MM-dd')
-    Date dateOfBirth
+    LocalDate dateOfBirth
     int age
     String passportNumber
     String email
     String phone
-    String image
+//    String image
 
     static constraints = {
-        lastName nullable: true
-        dateOfBirth nullable: true
-        age nullable: true
-        passportNumber nullable: true
-        email nullable: true
-        phone nullable: true
-        image nullable: true
+        firstName nullable: false,blank: false
+        lastName nullable: false
+        dateOfBirth nullable: false
+        age range: 18..65,nullable: false
+        passportNumber unique: true,nullable: false
+        email email: true,nullable: false,unique: true
+        phone nullable: false
+//        image nullable:true,blank: true
     }
+
+    static hasMany = [workplaces: Workplace]
 }

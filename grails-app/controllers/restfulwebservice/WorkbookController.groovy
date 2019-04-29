@@ -3,6 +3,9 @@ package restfulwebservice
 import grails.gorm.transactions.Transactional
 import grails.rest.RestfulController
 import groovy.transform.CompileStatic
+import org.joda.time.LocalDate
+import org.joda.time.format.DateTimeFormat
+import org.joda.time.format.DateTimeFormatter
 
 //@CompileStatic
 //class WorkbookController extends RestfulController {
@@ -42,12 +45,12 @@ class WorkbookController {
     }
     @Transactional
     def save(Workbook workbook){
-        println(workbook)
-        if(workbook.hasErrors())
+        println(workbook.dateOfBirth)
+
+        if(workbook.validate())
         {
-            respond workbook.errors
-        }
-        else{
+//            respond workbook.errors,view:'/workbook/create'
+//            respond workbook
             workbook.save(flush:true)
             withFormat {
                 html {
@@ -56,6 +59,11 @@ class WorkbookController {
                 }
 //                '*' { render status: CREATED }
             }
+     }
+        else{
+            respond workbook.org_grails_datastore_gorm_GormValidateable__errors
+            println workbook.org_grails_datastore_gorm_GormValidateable__errors
+
         }
     }
 
