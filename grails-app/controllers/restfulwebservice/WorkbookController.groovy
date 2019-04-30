@@ -45,7 +45,8 @@ class WorkbookController {
     }
     @Transactional
     def save(Workbook workbook){
-        println(workbook.dateOfBirth)
+//        println(workbook.dateOfBirth)
+        println(workbook.workplaces)
 
         if(workbook.validate())
         {
@@ -72,19 +73,11 @@ class WorkbookController {
     {
         println('update here')
         println(workbook)
-//        if(workbook == null)
-//        {
-//            println('null workbook')
-//        }
-//        else
-//        {
-            if(workbook.hasErrors())
+
+            if(workbook.validate())
             {
-                println('has errors')
-                respond workbook.errors
-            }
-            else
-            {
+
+
                 println('sucess save')
                 workbook.save(flush:true)
                 withFormat {
@@ -94,6 +87,11 @@ class WorkbookController {
                     }
 //                '*' { render status: CREATED }
                 }
+            }
+            else
+            {
+                respond workbook.org_grails_datastore_gorm_GormValidateable__errors
+                println workbook.org_grails_datastore_gorm_GormValidateable__errors
             }
         }
     }
