@@ -1,39 +1,83 @@
 package restfulwebservice
 
 import grails.gorm.transactions.Transactional
-import grails.rest.RestfulController
 
-class WorkplaceController extends RestfulController<Workplace> {
 
+class WorkplaceController {
+    def workplaceService
+    def workbookService
     static responseFormats = ['json', 'xml']
-    WorkplaceController() {
-        super(Workplace)
-    }
+    static allowedMethods = [save:"POST",update:"PUT",delete:"DELETE"]
 
-    @Override
+
     def index() {
         println('success index')
-        respond Workplace.list()
+        respond workplaceService.list()
+    }
+
+    def show(Workplace workplace) {
+        println('success show')
+        respond workplace
     }
     @Transactional
-    def save(Workbook workbook,Workplace workplace){
+    def save(Workplace workplace){
         println(workplace)
-        workbook.addToWorkplaces(workplace)
-//            respond workbook.errors,view:'/workbook/create'
-//            respond workbook
-            workbook.save(flush:true)
+//        println(workbook)
+        def workbook = workbookService.retrieveId(workplace.workbook.id)
+        if(!workplaceService.validateWorkplace(workbook,workplace))
+        {
+            respond workplace.errors
+        }
+        else{
+
+            workplaceService.save(workplace)
+//            workbook.save(flush:true)
             withFormat {
                 html {
-//                    flash.message = message(code: 'default.created.message', args: [message(code: 'book.label', default: 'Book'), book.id])
                     redirect workplace
                 }
-//                '*' { render status: CREATED }
+
             }
 
-//        else{
-//            respond workbook.org_grails_datastore_gorm_GormValidateable__errors
-//            println workbook.org_grails_datastore_gorm_GormValidateable__errors
-//
-//        }
+        }
+
+    }
+
+    @Transactional
+    def update(Workplace workplace)
+    {
+        println('update here')
+        println(workplace)
+
+        if(workplace.validate())
+        {
+
+
+            println('sucess save')
+            workplaceService.save(workplace)
+            withFormat {
+                html {
+                    redirect workplace
+                }
+
+            }
+        }
+        else
+        {
+            respond workplace.org_grails_datastore_gorm_GormValidateable__errors
+            println workplace.org_grails_datastore_gorm_GormValidateable__errors
+        }
+    }
+
+    def delete (Workplace workplace){
+        println('success delete')
+//        workplace.delete(flush: true)
+        workplaceService.delete(workplace)
+        withFormat {
+            html {
+                redirect workplace
+            }
+
+        }
     }
 }

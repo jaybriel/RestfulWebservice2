@@ -1,11 +1,7 @@
 package restfulwebservice
 
 import grails.gorm.transactions.Transactional
-import grails.rest.RestfulController
-import groovy.transform.CompileStatic
-import org.joda.time.LocalDate
-import org.joda.time.format.DateTimeFormat
-import org.joda.time.format.DateTimeFormatter
+
 
 //@CompileStatic
 //class WorkbookController extends RestfulController {
@@ -20,11 +16,15 @@ import org.joda.time.format.DateTimeFormatter
 
 @Transactional(readOnly = true)
 class WorkbookController {
+
+
+    def workbookService
+
     static responseFormats=['json','xml']
     def index()
     {
         println('success index')
-        respond Workbook.list()
+        respond workbookService.list()
     }
 
     def show(Workbook workbook) {
@@ -34,7 +34,7 @@ class WorkbookController {
 
     def delete (Workbook workbook){
         println('success delete')
-        workbook.delete(flush: true)
+        workbookService.delete(workbook)
         withFormat {
             html {
 //                    flash.message = message(code: 'default.created.message', args: [message(code: 'book.label', default: 'Book'), book.id])
@@ -52,7 +52,7 @@ class WorkbookController {
         {
 //            respond workbook.errors,view:'/workbook/create'
 //            respond workbook
-            workbook.save(flush:true)
+            workbookService.save(workbook)
             withFormat {
                 html {
 //                    flash.message = message(code: 'default.created.message', args: [message(code: 'book.label', default: 'Book'), book.id])
@@ -79,7 +79,7 @@ class WorkbookController {
 
 
                 println('sucess save')
-                workbook.save(flush:true)
+                workbookService.save(workbook)
                 withFormat {
                     html {
 //                    flash.message = message(code: 'default.created.message', args: [message(code: 'book.label', default: 'Book'), book.id])
