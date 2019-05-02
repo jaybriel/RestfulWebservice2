@@ -48,18 +48,12 @@ class WorkbookController {
 //        println(workbook.dateOfBirth)
         println(workbook.workplaces)
 
+
         if(workbook.validate())
         {
 //            respond workbook.errors,view:'/workbook/create'
 //            respond workbook
             workbookService.save(workbook)
-            withFormat {
-                html {
-//                    flash.message = message(code: 'default.created.message', args: [message(code: 'book.label', default: 'Book'), book.id])
-                    redirect workbook
-                }
-//                '*' { render status: CREATED }
-            }
      }
         else{
             respond workbook.org_grails_datastore_gorm_GormValidateable__errors

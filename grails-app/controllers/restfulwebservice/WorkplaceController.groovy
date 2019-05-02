@@ -31,13 +31,6 @@ class WorkplaceController {
         else{
 
             workplaceService.save(workplace)
-//            workbook.save(flush:true)
-            withFormat {
-                html {
-                    redirect workplace
-                }
-
-            }
 
         }
 
