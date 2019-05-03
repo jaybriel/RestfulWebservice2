@@ -6,4 +6,5 @@ model {
 }
 
 json tmpl.workbook(workbookList ?: [])
+//json g.render(template:'workbook/workbookList',model:[workbookList: workbookList])
 

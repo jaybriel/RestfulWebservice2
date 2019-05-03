@@ -13,7 +13,6 @@ class WorkbookSpec extends Specification implements DomainUnitTest<Workbook> {
     def cleanup() {
     }
 
-    @Unroll('Hotel.validate() with email: #value should have returned #expected with errorCode: #expectedErrorCode')
     void "test email validation with different test inputs and output expected result"(){
         when:
         domain.email = value
