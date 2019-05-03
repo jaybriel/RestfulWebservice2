@@ -18,6 +18,7 @@
       <library>
         <CLASSES>
           <root url="file://$MODULE_DIR$/../../gsp-classes" />
+          <root url="file://$MODULE_DIR$/../../build/gson-classes/main" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -44,6 +45,7 @@
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.1.16.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.grails.plugins:gsp:3.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.grails.plugins:joda-time:2.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.grails.plugins:views-json:1.2.6" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-gorm-testing-support:1.1.5" level="project" />
     <orderEntry type="library" name="Gradle: org.grails.plugins:geb:1.1.4" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-web-testing-support:1.1.5" level="project" />
@@ -104,6 +106,7 @@
     <orderEntry type="library" name="Gradle: org.grails:grails-plugin-codecs:3.3.9" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-web-jsp:3.3.2" level="project" />
     <orderEntry type="library" name="Gradle: joda-time:joda-time:2.9.9" level="project" />
+    <orderEntry type="library" name="Gradle: org.grails:views-core:1.2.6" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-plugin-domain-class:3.3.9" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-datastore-gorm-test:6.1.11.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-testing-support:1.1.5" level="project" />

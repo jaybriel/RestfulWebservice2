@@ -20,6 +20,7 @@ dependencies:
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.1.16.Final/7a87444230a21ad2201e96bfa2711766a502f0cc/hibernate-core-5.1.16.Final.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.grails.plugins/gsp/3.3.2/f1e032675f2233c0b18f4de8e74d830197d11ac5/gsp-3.3.2.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.grails.plugins/joda-time/2.1.0/15540aca415c444b32161963173d0e42362a179d/joda-time-2.1.0.jar
+- file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.grails.plugins/views-json/1.2.6/ad5fc318293278cfe9a06a05e5266d7d29aad52d/views-json-1.2.6.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.glassfish.web/el-impl/2.1.2-b03/6bab1211b6e6b191fdbf06067bd05d2f75a62ac0/el-impl-2.1.2-b03.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.197/bb391050048ca8ae3e32451b5a3714ecd3596a46/h2-1.4.197.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jdbc/8.5.35/b4b27053b96b70b6e2f3b8de9f5338b0d386386b/tomcat-jdbc-8.5.35.jar
@@ -79,6 +80,7 @@ dependencies:
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.grails/grails-plugin-codecs/3.3.9/58aa360e70cb31b7e7c50ac8523e99be3386f142/grails-plugin-codecs-3.3.9.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.grails/grails-web-jsp/3.3.2/8dc6e9733613ba951264550dc3961f0e5444fc68/grails-web-jsp-3.3.2.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.9/f7b520c458572890807d143670c9b24f4de90897/joda-time-2.9.9.jar
+- file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.grails/views-core/1.2.6/4e6c47ee34355e470cab81b82c7a5e261e5656c0/views-core-1.2.6.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/javax.el/el-api/2.1.2-b03/1ac087d9d1a632d2ff82fa1e8b6610aca025ff2a/el-api-2.1.2-b03.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-juli/8.5.35/69d0606072b31b57ba706d1ffc102064ad8f694b/tomcat-juli-8.5.35.jar
 - file:/home/jsomcio/.gradle/caches/modules-2/files-2.1/com.bertramlabs.plugins/asset-pipeline-core/2.15.1/7a03810517c8d4c241c686373f620e3ee92af1e7/asset-pipeline-core-2.15.1.jar

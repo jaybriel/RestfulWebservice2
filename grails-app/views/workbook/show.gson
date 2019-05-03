@@ -1,0 +1,7 @@
+import restfulwebservice.Workbook
+
+model {
+	Workbook workbook
+}
+
+json tmpl.workbook(workbook)

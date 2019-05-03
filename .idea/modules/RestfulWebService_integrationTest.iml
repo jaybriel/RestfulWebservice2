@@ -46,6 +46,7 @@
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.1.16.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.grails.plugins:gsp:3.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.grails.plugins:joda-time:2.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.grails.plugins:views-json:1.2.6" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-gorm-testing-support:1.1.5" level="project" />
     <orderEntry type="library" name="Gradle: org.grails.plugins:geb:1.1.4" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-web-testing-support:1.1.5" level="project" />
@@ -105,6 +106,7 @@
     <orderEntry type="library" name="Gradle: org.grails:grails-plugin-codecs:3.3.9" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-web-jsp:3.3.2" level="project" />
     <orderEntry type="library" name="Gradle: joda-time:joda-time:2.9.9" level="project" />
+    <orderEntry type="library" name="Gradle: org.grails:views-core:1.2.6" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-plugin-domain-class:3.3.9" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-datastore-gorm-test:6.1.11.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.grails:grails-testing-support:1.1.5" level="project" />
@@ -200,7 +202,26 @@
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.eclipse.jetty:jetty-util:9.4.12.v20180830" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.eclipse.jetty:jetty-io:9.4.12.v20180830" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.eclipse.jetty.websocket:websocket-common:9.4.12.v20180830" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../build/gson-classes/main" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.eclipse.jetty:jetty-http:9.4.12.v20180830" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../gsp-classes" />
+          <root url="file://$MODULE_DIR$/../../build/gson-classes/main" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.eclipse.jetty.websocket:websocket-api:9.4.12.v20180830" level="project" />
   </component>
 </module>

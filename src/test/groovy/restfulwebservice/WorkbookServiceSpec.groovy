@@ -23,7 +23,7 @@ class WorkbookServiceSpec extends Specification implements ServiceUnitTest<Workb
     }
 
 
-    void "test save method with existing workbook"(){
+    void "test save method with existing workbook then returns the saved workbook"(){
         given:
         DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-mm-dd")
         def workbook = new Workbook(firstName:"test",lastName:"test",dateOfBirth: LocalDate.parse('1997-11-02',formatter),age: 21,passportNumber: "E12345678",email: "jaybrielsomcio@gmail.com",phone: "09452665267").save(flush:true)
@@ -36,7 +36,7 @@ class WorkbookServiceSpec extends Specification implements ServiceUnitTest<Workb
         result == workbook
     }
 
-    void "test retrieveWorkbook id"(){
+    void "test retrieveId action of workbook then returns the workbook that matches the given id parameters"(){
         given:
         DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-mm-dd")
         def workbook = new Workbook(firstName:"jaybriel",lastName:"somcio",dateOfBirth: LocalDate.parse('1997-11-02',formatter),age: 21,passportNumber: "E12345678",email: "jaybrielsomcio@gmail.com",phone: "09452665267").save(flush:true)
@@ -55,7 +55,7 @@ class WorkbookServiceSpec extends Specification implements ServiceUnitTest<Workb
 
     }
 
-    void "test delete action with existing workbook"(){
+    void "test delete action with existing workbook then should delete the existing workbook"(){
         given:
         DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-mm-dd")
         def workbook = new Workbook(firstName:"jaybriel",lastName:"somcio",dateOfBirth: LocalDate.parse('1997-11-02',formatter),age: 21,passportNumber: "E12345678",email: "jaybrielsomcio@gmail.com",phone: "09452665267").save(flush:true)

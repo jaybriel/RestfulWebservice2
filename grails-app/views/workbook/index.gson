@@ -1,0 +1,9 @@
+
+import restfulwebservice.Workbook
+
+model {
+	Iterable<Workbook> workbookList
+}
+
+json tmpl.workbook(workbookList ?: [])
+

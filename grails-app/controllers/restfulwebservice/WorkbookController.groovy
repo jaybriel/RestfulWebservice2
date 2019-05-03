@@ -25,6 +25,8 @@ class WorkbookController {
     {
         println('success index')
         respond workbookService.list()
+
+
     }
 
     def show(Workbook workbook) {

@@ -1,0 +1,18 @@
+import restfulwebservice.Workbook
+
+model {
+		Workbook workbook
+}
+json{
+	id workbook.id
+	firstName workbook.firstName
+	lastName workbook.lastName
+	dateOfBirth workbook.dateOfBirth.toString()
+	age workbook.age
+	passportNumber workbook.passportNumber
+	email workbook.email
+	phone workbook.phone
+	workplaces tmpl.workplace(workbook.workplaces)
+}
+
+//json g.render(workbook, [resolveTemplate: false])

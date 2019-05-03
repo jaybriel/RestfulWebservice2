@@ -18,7 +18,7 @@ class Workbook {
         dateOfBirth nullable: false
         age range: 18..65,nullable: false
         passportNumber unique: true,nullable: false,matches:"^(?!0{9})[a-zA-Z0-9]{9}\$"
-        email email: true,nullable: false,unique: true
+        email email: true,nullable: false,unique: true,blank:false
         phone nullable: false,matches:"[0-9]{10,12}"
     }
 
