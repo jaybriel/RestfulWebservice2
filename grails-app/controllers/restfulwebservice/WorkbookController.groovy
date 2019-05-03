@@ -4,16 +4,6 @@ import grails.converters.JSON
 import grails.gorm.transactions.Transactional
 
 
-//@CompileStatic
-//class WorkbookController extends RestfulController {
-//
-//    static responseFormats=['json','xml']
-//
-//    WorkbookController() {
-//        super(Workbook)
-//    }
-//}
-
 
 @Transactional(readOnly = true)
 class WorkbookController {
@@ -98,13 +88,7 @@ class WorkbookController {
 
                 println('sucess save')
                 workbookService.save(workbook)
-                withFormat {
-                    html {
-//                    flash.message = message(code: 'default.created.message', args: [message(code: 'book.label', default: 'Book'), book.id])
-                        redirect workbook
-                    }
-//                '*' { render status: CREATED }
-                }
+
             }
             else
             {

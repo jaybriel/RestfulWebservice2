@@ -1,5 +1,6 @@
 package restfulwebservice
 
+import grails.converters.JSON
 import grails.gorm.transactions.Transactional
 
 
@@ -11,13 +12,34 @@ class WorkplaceController {
 
 
     def index() {
-        println('success index')
-        respond workplaceService.list()
+        if(workplaceService.list().size() <= 0)
+        {
+            response.status = 404
+            render([error:'workplaces not found'] as JSON)
+        }
+        else
+        {
+            println('success index')
+            respond workplaceService.list()
+        }
+
+
+
     }
 
     def show(Workplace workplace) {
-        println('success show')
-        respond workplace
+
+        if(workplace == null)
+        {
+            response.status = 404
+            render([error:'workplace not found'] as JSON)
+        }
+        else
+        {
+            println('success show')
+            respond workplace
+        }
+
     }
     @Transactional
     def save(Workplace workplace){
@@ -48,12 +70,6 @@ class WorkplaceController {
 
             println('sucess save')
             workplaceService.save(workplace)
-            withFormat {
-                html {
-                    redirect workplace
-                }
-
-            }
         }
         else
         {
@@ -63,14 +79,19 @@ class WorkplaceController {
     }
 
     def delete (Workplace workplace){
-        println('success delete')
-//        workplace.delete(flush: true)
-        workplaceService.delete(workplace)
-        withFormat {
-            html {
-                redirect workplace
-            }
 
+        if(workplace == null)
+        {
+            response.status = 404
+            render([error:'workplace not found'] as JSON)
         }
+        else{
+            println('success delete')
+            workplaceService.delete(workplace)
+        }
+
+
+
+
     }
 }
