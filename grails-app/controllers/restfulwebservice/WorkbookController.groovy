@@ -12,6 +12,7 @@ class WorkbookController {
     def workbookService
 
     static responseFormats=['json','xml']
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     def index()
     {
         if(workbookService.list().size() <= 0)
@@ -47,12 +48,13 @@ class WorkbookController {
         if(workbook == null)
         {
             response.status = 404
-            render([error:'workbook not found'] as JSON)
+            render([error:'workbook not found in delete'] as JSON)
         }
         else
         {
             println('success delete')
             workbookService.delete(workbook)
+            render([message:'workbook successfully deleted'] as JSON)
         }
 
     }
@@ -64,9 +66,8 @@ class WorkbookController {
 
          if(workbook.validate())
         {
-//            respond workbook.errors,view:'/workbook/create'
-//            respond workbook
             workbookService.save(workbook)
+            render([message:'workbook successfully saved'] as JSON)
      }
         else{
 
@@ -82,12 +83,18 @@ class WorkbookController {
         println('update here')
         println(workbook)
 
-            if(workbook.validate())
+        if(workbook == null)
+        {
+            response.status = 404
+            render([error:'workbook not found'] as JSON)
+        }
+           else if(workbook.validate())
             {
 
 
                 println('sucess save')
                 workbookService.save(workbook)
+                render([message:'workbook successfully updated'] as JSON)
 
             }
             else

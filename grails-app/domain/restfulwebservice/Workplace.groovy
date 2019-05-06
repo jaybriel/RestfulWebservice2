@@ -15,9 +15,9 @@ class Workplace {
 
     LocalDate endDate
     static constraints = {
-        cmpCode nullable: false
+        cmpCode nullable: false,blank:false
         cmpName nullable: true
-        ctyCode nullable: false
+        ctyCode nullable: false,blank:false
         ctyDesc nullable: true
         startDate nullable: false,matches:"([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))"
         endDate matches:"([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))",nullable: false,validator: {val, obj ->

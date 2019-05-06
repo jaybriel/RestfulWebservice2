@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="restfulwebservice.WorkbookControllerSpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-05-06T10:53:01" hostname="/0:0:0:0:0:0:0:1%lo" time="1.101">
+  <properties/>
+  <testcase name="test index action with multiple saved workbooks then should return index view" classname="restfulwebservice.WorkbookControllerSpec" time="0.896"/>
+  <testcase name="test save action with new workbook " classname="restfulwebservice.WorkbookControllerSpec" time="0.159"/>
+  <testcase name="test show action with existing workbook" classname="restfulwebservice.WorkbookControllerSpec" time="0.016"/>
+  <testcase name="test update action with existing workbook and some values will be replaced" classname="restfulwebservice.WorkbookControllerSpec" time="0.016"/>
+  <testcase name="test delete action with existing workbook and should delete workbook" classname="restfulwebservice.WorkbookControllerSpec" time="0.011"/>
+  <system-out><![CDATA[success index
+org.grails.plugins.testing.GrailsMockHttpServletResponse@fe625f
+null
+org.grails.plugins.testing.GrailsMockHttpServletResponse@683a6adc
+null
+success show
+org.grails.plugins.testing.GrailsMockHttpServletResponse@12618324
+null
+update here
+restfulwebservice.Workbook : (unsaved)
+sucess save
+org.grails.plugins.testing.GrailsMockHttpServletResponse@43c0a4f7
+null
+success delete
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

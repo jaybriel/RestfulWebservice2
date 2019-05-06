@@ -53,7 +53,7 @@ class WorkplaceController {
         else{
 
             workplaceService.save(workplace)
-
+            render([message:'workplace successfully saved'] as JSON)
         }
 
     }
@@ -63,18 +63,19 @@ class WorkplaceController {
     {
         println('update here')
         println(workplace)
-
-        if(workplace.validate())
+        def workbook = workbookService.retrieveId(workplace.workbook.id)
+        if(!workplaceService.validateWorkplace(workbook,workplace))
         {
 
+            respond workplace.org_grails_datastore_gorm_GormValidateable__errors
+            println workplace.org_grails_datastore_gorm_GormValidateable__errors
 
-            println('sucess save')
-            workplaceService.save(workplace)
         }
         else
         {
-            respond workplace.org_grails_datastore_gorm_GormValidateable__errors
-            println workplace.org_grails_datastore_gorm_GormValidateable__errors
+            println('sucess save')
+            workplaceService.save(workplace)
+            render([message:'workplace successfully updated'] as JSON)
         }
     }
 
@@ -88,6 +89,7 @@ class WorkplaceController {
         else{
             println('success delete')
             workplaceService.delete(workplace)
+            render([message:'workplace successfully deleted'] as JSON)
         }
 
 
