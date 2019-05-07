@@ -1,6 +1,6 @@
 package restfulwebservice
 
-import grails.plugin.json.view.test.JsonViewTest
+
 import grails.testing.gorm.DataTest
 import grails.testing.web.controllers.ControllerUnitTest
 import org.joda.time.LocalDate
@@ -34,7 +34,7 @@ class WorkbookControllerSpec extends Specification implements ControllerUnitTest
 
 
 
-    void "test save action with new workbook "(){
+    void "test save action with valid workbook and output status 200 for successul saving"(){
         given:
         DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-mm-dd")
         def workbook = new Workbook(firstName:"test",lastName:"test",dateOfBirth: LocalDate.parse('1997-11-02',formatter),age: 21,passportNumber: "E12345678",email: "jaybrielsomcio@gmail.com",phone: "09452665267")

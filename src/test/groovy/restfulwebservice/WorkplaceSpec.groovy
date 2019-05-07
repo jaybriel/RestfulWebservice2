@@ -15,67 +15,48 @@ class WorkplaceSpec extends Specification implements DomainUnitTest<Workplace> {
     def cleanup() {
     }
 
+    void "test cmpCode and ctyCode to not accept null values and output expected results "(){
+        when:
+        domain.cmpCode = value
+        domain.ctyCode = value
 
-    void 'test cmpCode cannot be blank then validate value'() {
-        when:"cmpCode is blank"
-        domain.cmpCode = ''
+        then:
+        expected == domain.validate(['cmpCode'])
+        domain.errors['cmpCode']?.code == expectedErrorCode
 
-        then:"cmpCode is validated and expected result is false because cmpCode is blank"
-        !domain.validate(['cmpCode'])
+        expected == domain.validate(['ctyCode'])
+        domain.errors['ctyCode']?.code == expectedErrorCode
+
+
+        where:
+        value                    | expected  | expectedErrorCode
+        null                     | false     | 'nullable'
+        'jaybriel somcio'        | true      |   null
+        'hilton'                 | true      |   null
+        '123123123'              | true      |   null
+        'jaybriel-somcio'        | true      |   null
     }
 
-    void 'test cmpCode cannot be null then validate value'() {
-        when:"cmpCode is null"
-        domain.cmpCode = null
+    void "test cmpName and ctyDesc if to accept null values and output expected results"(){
+        when:
+        domain.cmpName = value
+        domain.ctyDesc = value
 
-        then:"cmpCode is validated and expected result is false because cmpCode is null"
-        !domain.validate(['cmpCode'])
-    }
+        then:
+        expected == domain.validate(['cmpName'])
+        domain.errors['cmpName']?.code == expectedErrorCode
 
-    void 'test cmpName can be null'() {
-        when:"cmpName is null"
-        domain.cmpName = null
+        expected == domain.validate(['ctyDesc'])
+        domain.errors['ctyDesc']?.code == expectedErrorCode
 
-        then:"cmpName is validated and expected result is false because cmpName is null"
-        domain.validate(['cmpName'])
-    }
 
-    void 'test cmpName can be blank'() {
-        when:"cmpName is blank"
-        domain.cmpName = ''
-
-        then:"cmpName is validated and expected result is false because cmpName is blank"
-        domain.validate(['cmpName'])
-    }
-    void 'test ctyCode cannot be blank'() {
-        when:"ctyCode is blank"
-        domain.ctyCode = ''
-
-        then:"ctyCode is validated and expected result is false because ctyCode is blank"
-        !domain.validate(['ctyCode'])
-    }
-
-    void 'test ctyCode cannot be null'() {
-        when:"ctyCode is null"
-        domain.ctyCode = null
-
-        then:"ctyCode is validated and expected result is false because ctyCode is null"
-        !domain.validate(['ctyCode'])
-    }
-    void 'test ctyDesc can be null'() {
-        when:"ctyDesc is null"
-        domain.ctyDesc = null
-
-        then:"ctyDesc is validated and expected result is false because ctyDesc is blank"
-        domain.validate(['ctyDesc'])
-    }
-
-    void 'test ctyDesc can be blank'() {
-        when:"ctyDesc is blank"
-        domain.ctyDesc = ''
-
-        then:"ctyDesc is validated and expected result is false because ctyCode is blank"
-        domain.validate(['ctyDesc'])
+        where:
+        value                    | expected  | expectedErrorCode
+        null                     | true     |    null
+        'jaybriel somcio'        | true      |   null
+        'hilton'                 | true      |   null
+        '123123123'              | true      |   null
+        'jaybriel-somcio'        | true      |   null
     }
 
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="restfulwebservice.WorkbookServiceSpec" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-05-06T10:53:02" hostname="/0:0:0:0:0:0:0:1%lo" time="0.118">
+<testsuite name="restfulwebservice.WorkbookServiceSpec" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-05-07T14:43:02" hostname="/0:0:0:0:0:0:0:1%lo" time="0.184">
   <properties/>
-  <testcase name="test retrieveId action of workbook " classname="restfulwebservice.WorkbookServiceSpec" time="0.038"/>
-  <testcase name="test save method with existing workbook then returns the saved workbook" classname="restfulwebservice.WorkbookServiceSpec" time="0.021"/>
-  <testcase name="test delete action with 1 existing workbook then should delete the existing workbook" classname="restfulwebservice.WorkbookServiceSpec" time="0.012"/>
-  <testcase name="test save method with 1 existing workbook and workplace then returns the saved workbook" classname="restfulwebservice.WorkbookServiceSpec" time="0.027"/>
+  <testcase name="test retrieveId action of workbook and test the values if the action returns the correct model" classname="restfulwebservice.WorkbookServiceSpec" time="0.049"/>
+  <testcase name="test save method with existing workbook then returns the saved workbook" classname="restfulwebservice.WorkbookServiceSpec" time="0.038"/>
+  <testcase name="test delete action with 1 existing workbook then should delete the existing workbook" classname="restfulwebservice.WorkbookServiceSpec" time="0.058"/>
+  <testcase name="test save method with 1 existing workbook and workplace then returns the saved workbook" classname="restfulwebservice.WorkbookServiceSpec" time="0.012"/>
   <testcase name="test delete method with 1 existing workbook and workplace then should delete the existing workbook" classname="restfulwebservice.WorkbookServiceSpec" time="0.01"/>
-  <testcase name="test the list action with 3 existing workbooks then returns the correct model with size of list" classname="restfulwebservice.WorkbookServiceSpec" time="0.01"/>
+  <testcase name="test the list action with 3 existing workbooks then returns the correct model with size of list" classname="restfulwebservice.WorkbookServiceSpec" time="0.017"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

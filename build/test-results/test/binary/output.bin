@@ -1,22 +1,22 @@
 success index
-@org.grails.plugins.testing.GrailsMockHttpServletResponse@fe625f
+Borg.grails.plugins.testing.GrailsMockHttpServletResponse@75f50305
 null
-Borg.grails.plugins.testing.GrailsMockHttpServletResponse@683a6adc
+Borg.grails.plugins.testing.GrailsMockHttpServletResponse@2367cdc0
 null
 success show
-Borg.grails.plugins.testing.GrailsMockHttpServletResponse@12618324
+Borg.grails.plugins.testing.GrailsMockHttpServletResponse@66d0097e
 null
 update here
 'restfulwebservice.Workbook : (unsaved)
 sucess save
-Borg.grails.plugins.testing.GrailsMockHttpServletResponse@43c0a4f7
+Borg.grails.plugins.testing.GrailsMockHttpServletResponse@77427df7
 null
 success delete
-success index
-(restfulwebservice.Workplace : (unsaved)
-(restfulwebservice.Workplace : (unsaved)
-success delete
-(restfulwebservice.Workplace : (unsaved)
-update here
-(restfulwebservice.Workplace : (unsaved)
-sucess save
+success index
+(restfulwebservice.Workplace : (unsaved)
+(restfulwebservice.Workplace : (unsaved)
+success delete
+(restfulwebservice.Workplace : (unsaved)
+update here
+(restfulwebservice.Workplace : (unsaved)
+sucess save

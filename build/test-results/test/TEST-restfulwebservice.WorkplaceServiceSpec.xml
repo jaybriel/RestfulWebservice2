@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="restfulwebservice.WorkplaceServiceSpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-05-06T10:53:03" hostname="/0:0:0:0:0:0:0:1%lo" time="0.042">
+<testsuite name="restfulwebservice.WorkplaceServiceSpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-05-07T14:43:03" hostname="/0:0:0:0:0:0:0:1%lo" time="0.051">
   <properties/>
-  <testcase name="test delete action with 1 saved workbook and 1 existing workplace then should delete the workplace of the workbook" classname="restfulwebservice.WorkplaceServiceSpec" time="0.01"/>
-  <testcase name="test save action with 1 saved workbook and 1 existing workplace then should return saved workplaces" classname="restfulwebservice.WorkplaceServiceSpec" time="0.014"/>
+  <testcase name="test delete action with 1 saved workbook and 1 existing workplace then should delete the workplace of the workbook" classname="restfulwebservice.WorkplaceServiceSpec" time="0.011"/>
+  <testcase name="test save action with 1 saved workbook and 1 existing workplace then should return saved workplaces" classname="restfulwebservice.WorkplaceServiceSpec" time="0.015"/>
   <testcase name="test validateDate with existing workbook and workplace to validate startdate and enddate if overlaps and returns expected boolean result" classname="restfulwebservice.WorkplaceServiceSpec" time="0.004"/>
-  <testcase name="test checkOverlapWithPrevDate with existing workbook and multiple workplace to validate startdate and enddate if overlaps with other entries and returns expected boolean result" classname="restfulwebservice.WorkplaceServiceSpec" time="0.008"/>
-  <testcase name="test validateWorkplace with 1 existing workbook and workplace to validate constraints then returns boolean result" classname="restfulwebservice.WorkplaceServiceSpec" time="0.006"/>
+  <testcase name="test checkOverlapWithPrevDate with existing workbook and multiple workplace to validate startdate and enddate if overlaps with other entries and returns expected boolean result" classname="restfulwebservice.WorkplaceServiceSpec" time="0.013"/>
+  <testcase name="test validateWorkplace with 1 existing workbook and workplace to validate constraints then returns boolean result" classname="restfulwebservice.WorkplaceServiceSpec" time="0.007"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

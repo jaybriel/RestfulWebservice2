@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="restfulwebservice.WorkbookControllerSpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-05-06T10:53:01" hostname="/0:0:0:0:0:0:0:1%lo" time="1.101">
+<testsuite name="restfulwebservice.WorkbookControllerSpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-05-07T14:43:00" hostname="/0:0:0:0:0:0:0:1%lo" time="1.7">
   <properties/>
-  <testcase name="test index action with multiple saved workbooks then should return index view" classname="restfulwebservice.WorkbookControllerSpec" time="0.896"/>
-  <testcase name="test save action with new workbook " classname="restfulwebservice.WorkbookControllerSpec" time="0.159"/>
-  <testcase name="test show action with existing workbook" classname="restfulwebservice.WorkbookControllerSpec" time="0.016"/>
-  <testcase name="test update action with existing workbook and some values will be replaced" classname="restfulwebservice.WorkbookControllerSpec" time="0.016"/>
-  <testcase name="test delete action with existing workbook and should delete workbook" classname="restfulwebservice.WorkbookControllerSpec" time="0.011"/>
+  <testcase name="test index action with multiple saved workbooks then should return index view" classname="restfulwebservice.WorkbookControllerSpec" time="1.479"/>
+  <testcase name="test save action with valid workbook and output status 200 for successul saving" classname="restfulwebservice.WorkbookControllerSpec" time="0.167"/>
+  <testcase name="test show action with existing workbook" classname="restfulwebservice.WorkbookControllerSpec" time="0.019"/>
+  <testcase name="test update action with existing workbook and some values will be replaced" classname="restfulwebservice.WorkbookControllerSpec" time="0.019"/>
+  <testcase name="test delete action with existing workbook and should delete workbook" classname="restfulwebservice.WorkbookControllerSpec" time="0.013"/>
   <system-out><![CDATA[success index
-org.grails.plugins.testing.GrailsMockHttpServletResponse@fe625f
+org.grails.plugins.testing.GrailsMockHttpServletResponse@75f50305
 null
-org.grails.plugins.testing.GrailsMockHttpServletResponse@683a6adc
+org.grails.plugins.testing.GrailsMockHttpServletResponse@2367cdc0
 null
 success show
-org.grails.plugins.testing.GrailsMockHttpServletResponse@12618324
+org.grails.plugins.testing.GrailsMockHttpServletResponse@66d0097e
 null
 update here
 restfulwebservice.Workbook : (unsaved)
 sucess save
-org.grails.plugins.testing.GrailsMockHttpServletResponse@43c0a4f7
+org.grails.plugins.testing.GrailsMockHttpServletResponse@77427df7
 null
 success delete
 ]]></system-out>

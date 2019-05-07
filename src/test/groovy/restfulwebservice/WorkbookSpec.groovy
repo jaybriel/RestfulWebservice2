@@ -9,14 +9,18 @@ import spock.lang.Unroll
 
 class WorkbookSpec extends Specification implements DomainUnitTest<Workbook> {
 
+
+
+
     def setup() {
         mockDomain Workbook
+        mockDomain Workplace
     }
 
     def cleanup() {
     }
 
-    void "test email validation with different test inputs and output expected result"(){
+    void "test email validation if accepts input without @ symbol and output expected results"(){
         when:
         domain.email = value
 
@@ -32,43 +36,47 @@ class WorkbookSpec extends Specification implements DomainUnitTest<Workbook> {
         'hilton'                | false    | 'email.invalid'
     }
 
-
-
-
-    void 'test firstName cannot be null then validate value'() {
+    void "test firstName and lastName if accepts null values and numbers and output expected results "(){
         when:
-        domain.firstName = null
+        domain.firstName = value
+        domain.lastName = value
 
-        then:"value of first name is validated which returns a boolean of false because of null value"
-        !domain.validate(['firstName'])
+        then:
+        expected == domain.validate(['firstName'])
+        domain.errors['firstName']?.code == expectedErrorCode
+
+        expected == domain.validate(['lastName'])
+        domain.errors['lastName']?.code == expectedErrorCode
+
+        where:
+        value                    | expected  | expectedErrorCode
+        null                     | false     | 'nullable'
+        'jaybriel somcio'        | true      |   null
+        'hilton'                 | true      |   null
+        '123123123'              | false     | 'matches.invalid'
+        'jaybriel-somcio'        | true      |   null
+    }
+
+    void "test phone if matches the regex pattern(no letters and should be atleast 10-12 characters long and output expected result)"(){
+        when:
+        domain.phone = value
+
+        then:
+        expected == domain.validate(['phone'])
+        domain.errors['phone']?.code == expectedErrorCode
+
+
+
+        where:
+        value                    | expected  | expectedErrorCode
+        null                     | false     | 'nullable'
+        'jaybriel somcio'        | false      | 'matches.invalid'
+        'hilton'                 | false      | 'matches.invalid'
+        '123123123'              | false      | 'matches.invalid'
+        '09151324733'            | true      |   null
     }
 
 
-    void 'test lastName cannot be null then validate value'() {
-        when:
-        domain.lastName = null
-
-        then:"value of last name is validated which returns a boolean of false because of null value"
-        !domain.validate(['lastName'])
-    }
-
-
-    void 'test date of birth cannot be null'() {
-        when:
-        domain.dateOfBirth = null
-
-        then:"value of date of birth is validated which returns a boolean of false because of null value"
-        !domain.validate(['dateOfBirth'])
-    }
-
-
-    void 'test passportNumber cannot be null'() {
-        when:
-        domain.passportNumber = null
-
-        then:"value of passport number is validated which returns a boolean of false because of null value"
-        !domain.validate(['passportNumber'])
-    }
 
 
 
@@ -163,8 +171,10 @@ class WorkbookSpec extends Specification implements DomainUnitTest<Workbook> {
 
         where:
         value                  | expected | expectedErrorCode
+        null                   | false    | 'nullable'
         'E12345678'            | true     | null
         '123456789'            | true     | null
+        'asdadadasd'           | false    | 'matches.invalid'
 
     }
 
@@ -184,33 +194,5 @@ class WorkbookSpec extends Specification implements DomainUnitTest<Workbook> {
         'asdasdasdasdaa'       | false     | 'matches.invalid'
     }
 
-    void "test firstName regex patterns with different test inputs and output expected results"(){
-        when:
-        domain.firstName = value
 
-        then:"firstName is validated"
-        expected == domain.validate(['firstName'])
-        domain.errors['firstName']?.code == expectedErrorCode
-
-        where:"data table is defined to test different inputs and outputs expected results"
-        value                  | expected | expectedErrorCode
-        '1234567890'           | false     | 'matches.invalid'
-        '123456789'            | false     | 'matches.invalid'
-        'asdasdasdasdaa'       | true      | null
-    }
-
-    void "test lastName regex patterns with different test inputs and output expected results"(){
-        when:
-        domain.lastName = value
-
-        then:"lastName is validated"
-        expected == domain.validate(['lastName'])
-        domain.errors['lastName']?.code == expectedErrorCode
-
-        where:"data table is defined to test different inputs and outputs expected results"
-        value                  | expected | expectedErrorCode
-        '1234567890'           | false     | 'matches.invalid'
-        '123456789'            | false     | 'matches.invalid'
-        'asdasdasdasdaa'       | true      | null
-    }
 }

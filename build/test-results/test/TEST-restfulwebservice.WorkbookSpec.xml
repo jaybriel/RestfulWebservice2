@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="restfulwebservice.WorkbookSpec" tests="12" skipped="0" failures="0" errors="0" timestamp="2019-05-06T10:53:02" hostname="/0:0:0:0:0:0:0:1%lo" time="0.118">
+<testsuite name="restfulwebservice.WorkbookSpec" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-05-07T14:43:02" hostname="/0:0:0:0:0:0:0:1%lo" time="0.159">
   <properties/>
-  <testcase name="test email validation with different test inputs and output expected result" classname="restfulwebservice.WorkbookSpec" time="0.028"/>
-  <testcase name="test firstName cannot be null then validate value" classname="restfulwebservice.WorkbookSpec" time="0.004"/>
-  <testcase name="test lastName cannot be null then validate value" classname="restfulwebservice.WorkbookSpec" time="0.003"/>
-  <testcase name="test date of birth cannot be null" classname="restfulwebservice.WorkbookSpec" time="0.003"/>
-  <testcase name="test passportNumber cannot be null" classname="restfulwebservice.WorkbookSpec" time="0.003"/>
-  <testcase name="test age range validation with different test inputs and ouput expected result" classname="restfulwebservice.WorkbookSpec" time="0.021"/>
-  <testcase name="test email unique constraint with 2 workbooks with the same email address" classname="restfulwebservice.WorkbookSpec" time="0.013"/>
+  <testcase name="test email validation if accepts input without @ symbol and output expected results" classname="restfulwebservice.WorkbookSpec" time="0.041"/>
+  <testcase name="test firstName and lastName if accepts null values and numbers and output expected results " classname="restfulwebservice.WorkbookSpec" time="0.024"/>
+  <testcase name="test phone if matches the regex pattern(no letters and should be atleast 10-12 characters long and output expected result)" classname="restfulwebservice.WorkbookSpec" time="0.019"/>
+  <testcase name="test age range validation with different test inputs and ouput expected result" classname="restfulwebservice.WorkbookSpec" time="0.026"/>
+  <testcase name="test email unique constraint with 2 workbooks with the same email address" classname="restfulwebservice.WorkbookSpec" time="0.012"/>
   <testcase name="test passportNumber unique constraint with 2 workbooks with the same passportNumber" classname="restfulwebservice.WorkbookSpec" time="0.009"/>
-  <testcase name="test passportNumber regex patterns with different test inputs and output expected results" classname="restfulwebservice.WorkbookSpec" time="0.006"/>
-  <testcase name="test phoneNumber regex patterns with different test inputs and output expected results" classname="restfulwebservice.WorkbookSpec" time="0.011"/>
-  <testcase name="test firstName regex patterns with different test inputs and output expected results" classname="restfulwebservice.WorkbookSpec" time="0.009"/>
-  <testcase name="test lastName regex patterns with different test inputs and output expected results" classname="restfulwebservice.WorkbookSpec" time="0.007"/>
+  <testcase name="test passportNumber regex patterns with different test inputs and output expected results" classname="restfulwebservice.WorkbookSpec" time="0.014"/>
+  <testcase name="test phoneNumber regex patterns with different test inputs and output expected results" classname="restfulwebservice.WorkbookSpec" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
